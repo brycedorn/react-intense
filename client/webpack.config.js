@@ -1,11 +1,11 @@
 "use strict";
+
 var Path = require("path"),
     webpack = require("webpack"),
     HtmlWebpackPlugin = require("html-webpack-plugin"),
-    webpackConfig,
-    IS_PRODUCTION = false
+    IS_PRODUCTION = false;
 
-webpackConfig = module.exports = {
+var webpackConfig = module.exports = {
   entry: "./client/scripts/index.js",
   output: {
     path: Path.resolve(__dirname, "../public/assets"),
