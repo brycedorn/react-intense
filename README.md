@@ -1,6 +1,6 @@
 # react-intense
 
-[![npm version](https://badge.fury.io/js/react-intense.svg)](https://badge.fury.io/js/react-intense)
+[![npm version](https://badge.fury.io/js/react-intense.svg)](https://badge.fury.io/js/react-intense) [![MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/brycedorn/react-intense/master/LICENSE)
 
 This component is a port of [Intense Image Viewer](http://tholman.com/intense-images/) for use with React.
 
