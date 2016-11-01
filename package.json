@@ -1,0 +1,52 @@
+{
+  "name": "react-intense",
+  "version": "0.0.1",
+  "description": "A React port of the javascript full-size image viewer",
+  "main": "lib/ReactIntense.js",
+  "scripts": {
+    "watch": "webpack --config ./client/webpack.config.js --watch",
+    "build_client": "webpack -p --config ./client/webpack.config.js"
+  },
+  "keywords": [
+    "react",
+    "intense",
+    "react-intense",
+    "intense-images",
+    "full-size",
+    "full-screen"
+  ],
+  "author": {
+    "name": "Bryce Dorn",
+    "email": "brycedorn@gmail.com",
+    "url": "http://www.bryce.io"
+  },
+  "license": {
+    "type": "MIT",
+    "url": "http://www.mit-license.org"
+  },
+  "bugs": {
+    "url": "https://github.com/brycedorn/react-intense/issues"
+  },
+  "homepage": "http://bryce.io/react-intense",
+  "devDependencies": {
+    "babel-core": "^5.8.35",
+    "babel-loader": "^5.4.0",
+    "css-loader": "^0.25.0",
+    "file-loader": "^0.9.0",
+    "gulp": "3.9.0",
+    "gulp-jshint": "^1.9.0",
+    "gulp-react": "^2.0.0",
+    "html-webpack-plugin": "^1.1.0",
+    "jsx-loader": "^0.13.2",
+    "react": "^0.14.8",
+    "react-dom": "^15.3.2",
+    "react-tools": "^0.12.0",
+    "run-sequence": "^1.0.2",
+    "sass-loader": "^4.0.2",
+    "style-loader": "^0.8.1",
+    "stylus": "^0.49.3",
+    "stylus-loader": "^2.3.1",
+    "url-loader": "^0.5.5",
+    "webpack": "^1.13.3"
+  }
+}
