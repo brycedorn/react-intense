@@ -1,8 +1,10 @@
 # react-intense
 
+[![npm version](https://badge.fury.io/js/react-intense.svg)](https://badge.fury.io/js/react-intense)
+
 This component is a port of [Intense Image Viewer](http://tholman.com/intense-images/) for use with React.
 
-Demo: [bryce.io/react-intense](http://bryce.io/react-intense)
+[Demo](http://bryce.io/react-intense).
 
 ## Usage
 
@@ -18,21 +20,19 @@ import ReactIntense from 'react-intense'
 
 and you're good to go!
 
-Go [here](http://bryce.io/react-intense) for a live demo of this component.
-
 ## Additional Props
 
-##### Title/caption:
+Title/caption:
 ```javascript
 <ReactIntense caption={'caption'} src={'img.jpg'} title={'title'} />
 ```
 
-##### Thumbnail image (for lazy load of main image):
+Thumbnail image (for lazy load of main image):
 ```javascript
 <ReactIntense src={'large_version.jpg'} thumbnail={'small_version.jpg'} />
 ```
 
-##### Vertically-oriented images:
+Vertically-oriented images:
 ```javascript
 <ReactIntense src={'tall_image.jpg'} vertical={true} />
 ```
