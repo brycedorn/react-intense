@@ -5,7 +5,7 @@
   "main": "lib/ReactIntense.js",
   "scripts": {
     "watch": "webpack --config ./client/webpack.config.js --watch",
-    "build_client": "webpack -p --config ./client/webpack.config.js"
+    "build": "webpack -p --config ./client/webpack.config.js"
   },
   "keywords": [
     "react",
@@ -33,9 +33,6 @@
     "babel-loader": "^5.4.0",
     "css-loader": "^0.25.0",
     "file-loader": "^0.9.0",
-    "gulp": "3.9.0",
-    "gulp-jshint": "^1.9.0",
-    "gulp-react": "^2.0.0",
     "html-webpack-plugin": "^1.1.0",
     "jsx-loader": "^0.13.2",
     "react": "^0.14.8",
