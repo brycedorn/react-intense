@@ -7,25 +7,25 @@ import { render } from 'react-dom'
 import ReactIntense from '../../lib/ReactIntense'
 
 const DemoImages = [{
-  caption: 'With lots of wheaty puffs. Love those puffs',
+  caption: 'An annual month-long festival in Kyoto',
   classes: 'demo-image first',
-  src: require("../img/h1_small.jpg"),
-  thumbnailSrc: require("../img/h1_small_thumb.jpg"),
-  title: 'Beautiful fields',
+  src: require("../img/horse.jpg"),
+  thumbnailSrc: require("../img/horse_thumb.jpg"),
+  title: 'Gion Matsuri',
 },
 { 
-  caption: 'Longing for exploration. Explore me!',
+  caption: 'Umbrellas are key!',
   classes: 'demo-image second',
-  src: require("../img/v1_small.jpg"),
-  thumbnailSrc: require("../img/v1_small_thumb.jpg"),
-  title: 'Fantastic cliffs',
+  src: require("../img/rain.jpg"),
+  thumbnailSrc: require("../img/rain_thumb.jpg"),
+  title: 'Rainy rain',
   vertical: true,
 }, {
-  caption: 'To your breed, your fleece, your clan be true!',
+  caption: 'Ancient Buddhist temple on a cliff',
   classes: 'demo-image third',
-  src: require("../img/h2_small.jpg"),
-  thumbnailSrc: require("../img/h2_small_thumb.jpg"),
-  title: 'Chilling sheep',
+  src: require("../img/temple.jpg"),
+  thumbnailSrc: require("../img/temple_thumb.jpg"),
+  title: 'Kiyomizu-dera',
 }]
 
 class IntenseDemos extends React.Component {
