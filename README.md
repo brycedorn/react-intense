@@ -32,9 +32,14 @@ Thumbnail image (for lazy load of main image):
 <ReactIntense src={'large_version.jpg'} thumbnail={'small_version.jpg'} />
 ```
 
-Vertically-oriented images:
+Vertical scrolling:
 ```javascript
 <ReactIntense src={'tall_image.jpg'} vertical={true} />
+```
+
+Scroll speed (default is `0.05`):
+```javascript
+<ReactIntense src={'image.jpg'} moveSpeed={0.05} />
 ```
 
 ## Styling
