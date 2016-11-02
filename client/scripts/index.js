@@ -55,4 +55,4 @@ class IntenseDemos extends React.Component {
 }
 
 render(<IntenseDemos />, document.getElementById('demos'));
-document.body.style='display:block'
+document.body.setAttribute("style","display:block");
