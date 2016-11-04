@@ -13,6 +13,10 @@
   margin: 0 8px;
 }
 
+.ri-wrapper a.clicked {
+  box-shadow: inset 0 0 0 500px rgba(0,0,0,.2);
+}
+
 .ri-container {
   background-color: rgba(0,0,0,0.8);
   width: 100%;
