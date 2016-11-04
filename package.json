@@ -1,11 +1,11 @@
 {
   "name": "react-intense",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A React port of the javascript full-size image viewer",
   "main": "lib/ReactIntense.js",
   "scripts": {
-    "watch": "webpack --config ./client/webpack.config.js --watch",
-    "build": "webpack -p --config ./client/webpack.config.js"
+    "build": "webpack -p --config ./client/webpack.config.js",
+    "dev": "webpack --config ./client/webpack.config.js && webpack-dev-server --config ./client/webpack.config.js --inline --hot --content-base ./public"
   },
   "keywords": [
     "react",
@@ -44,6 +44,7 @@
     "stylus": "^0.49.3",
     "stylus-loader": "^2.3.1",
     "url-loader": "^0.5.5",
-    "webpack": "^1.13.3"
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
   }
 }
