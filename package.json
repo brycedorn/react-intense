@@ -15,6 +15,10 @@
     "full-size",
     "full-screen"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brycedorn/react-intense"
+  },
   "author": {
     "name": "Bryce Dorn",
     "email": "brycedorn@gmail.com",
