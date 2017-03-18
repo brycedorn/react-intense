@@ -65,3 +65,20 @@
   background: none;
   margin-top: 5px;
 }
+
+.ri-loader {
+  position: relative;
+  left: 30%;
+  top: 30%;
+}
+
+.ri-loader > div {
+  width: 12px;
+  height: 12px;
+  margin-left: 2px;
+  margin-top: 2px;
+}
+
+.ri-loader > div > div {
+  background: #fff;
+}

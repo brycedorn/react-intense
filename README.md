@@ -15,7 +15,7 @@ import ReactIntense from 'react-intense'
 
 ...
 
-<ReactIntense src={'img.jpg'} />
+<ReactIntense src='img.jpg' />
 ```
 
 and you're good to go!
@@ -24,22 +24,29 @@ and you're good to go!
 
 Title/caption:
 ```javascript
-<ReactIntense caption={'caption'} src={'img.jpg'} title={'title'} />
+<ReactIntense caption='caption' src='img.pg'} title='title' />
 ```
 
 Thumbnail image (for lazy load of main image):
 ```javascript
-<ReactIntense src={'large_version.jpg'} thumbnail={'small_version.jpg'} />
+<ReactIntense src='large_version.jpg' thumbnail='small_version.jpg' />
 ```
 
 Vertical scrolling:
 ```javascript
-<ReactIntense src={'tall_image.jpg'} vertical={true} />
+<ReactIntense src='tall_img.jpg' vertical=true />
 ```
 
 Scroll speed (default is `0.05`):
 ```javascript
-<ReactIntense src={'image.jpg'} moveSpeed={0.05} />
+<ReactIntense src='img.jpg' moveSpeed=0.05 />
+```
+
+Loading indicator (default is none):
+ - Requires some CSS for [positioning](https://github.com/brycedorn/react-intense/blob/master/lib/ReactIntense.css#L67) and associated [`div` structure](https://github.com/brycedorn/react-intense/blob/master/lib/ReactIntense.js#L268); demo shows the `spin` loader from [loading.io](http://loading.io/) which is bundled in [`loader.css`](https://github.com/brycedorn/react-intense/blob/master/lib/loader.css).
+
+```javascript
+<ReactIntense src='img.jpg' loader='uil-spin-css' />
 ```
 
 ## Styling
@@ -53,3 +60,4 @@ Feel free to use and/or customize the provided styles in `lib/ReactIntense.css`.
 ## Thanks
 * [Tim Holman](https://github.com/tholman)
 * [Paul Irish](https://gist.github.com/paulirish/1579671)
+* [loading.io](http://loading.io)
