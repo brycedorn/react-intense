@@ -36,6 +36,7 @@ class IntenseDemos extends React.Component {
           caption={caption}
           classes={classes}
           key={title}
+          loader='uil-spin-css'
           src={src}
           thumbnailSrc={thumbnailSrc}
           title={title}
