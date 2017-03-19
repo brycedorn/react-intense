@@ -24,7 +24,7 @@ and you're good to go!
 
 Title/caption:
 ```javascript
-<ReactIntense caption='caption' src='img.pg'} title='title' />
+<ReactIntense caption='caption' src='img.pg' title='title' />
 ```
 
 Thumbnail image (for lazy load of main image):
