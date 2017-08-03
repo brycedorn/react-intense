@@ -39,7 +39,7 @@
     "file-loader": "^0.9.0",
     "html-webpack-plugin": "^1.1.0",
     "jsx-loader": "^0.13.2",
-    "react": "^0.14.8",
+    "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-tools": "^0.12.0",
     "run-sequence": "^1.0.2",
