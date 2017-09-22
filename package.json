@@ -33,6 +33,7 @@
   },
   "homepage": "http://bryce.io/react-intense",
   "devDependencies": {
+    "autobind-decorator": "^2.1.0",
     "babel-core": "^5.8.35",
     "babel-loader": "^5.4.0",
     "css-loader": "^0.25.0",
