@@ -6,6 +6,8 @@ import React from 'react'
 import { render } from 'react-dom'
 import ReactIntense from '../../lib/ReactIntense'
 
+import ga from 'react-ga'
+
 const DemoImages = [{
   caption: 'An annual month-long festival in Kyoto',
   classes: 'demo-image first',
@@ -13,7 +15,7 @@ const DemoImages = [{
   thumbnailSrc: require("../img/horse_thumb.jpg"),
   title: 'Gion Matsuri',
 },
-{ 
+{
   caption: 'Umbrellas are key!',
   classes: 'demo-image second',
   src: require("../img/rain.jpg"),
@@ -29,12 +31,24 @@ const DemoImages = [{
 }]
 
 class IntenseDemos extends React.Component {
+  componentWillMount() {
+    ga.initialize('UA-40008117-16')
+  }
+
+  onClick(imageTitle) {
+    ga.event({
+      category: 'Demo Image Click',
+      action: imageTitle
+    })
+  }
+
   _renderImages (images) {
     return images.map(
       ({ caption, classes, src, thumbnailSrc, title, vertical }) => (
-        <ReactIntense 
+        <ReactIntense
           caption={caption}
           classes={classes}
+          onClick={() => this.onClick(title)}
           key={title}
           loader='uil-spin-css'
           src={src}
@@ -47,6 +61,8 @@ class IntenseDemos extends React.Component {
   }
 
   render() {
+    ga.pageview('/')
+
     return (
       <div id="react-root">
         {this._renderImages(DemoImages)}
