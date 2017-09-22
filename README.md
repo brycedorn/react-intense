@@ -27,9 +27,16 @@ Title/caption:
 <ReactIntense caption='caption' src='img.pg'} title='title' />
 ```
 
-Thumbnail image (for lazy load of main image):
+Thumbnail image (for lazy loading of main image):
 ```javascript
 <ReactIntense src='large_version.jpg' thumbnail='small_version.jpg' />
+```
+
+Trigger (override thumbnail image):
+ - If you'd like to completely override the thumbnail image as the trigger for maximizing the image, you may pass in an entire React element.
+ - It must accept an `onClick` prop in addition to the generic `className`, `ref`, and `style` props.
+```javascript
+<ReactIntense src='large_version.jpg' trigger={myTrigger} />
 ```
 
 Vertical scrolling:
