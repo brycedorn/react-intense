@@ -30,6 +30,11 @@ var webpackConfig = module.exports = {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(IS_PRODUCTION ? 'production' : 'development')
     }),
-    new UglifyJSPlugin()
+    new UglifyJSPlugin({
+      compress: {
+        warnings: false
+      },
+      sourceMap: true
+    })
   ]
 };
