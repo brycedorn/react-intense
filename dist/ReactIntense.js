@@ -343,8 +343,8 @@ var ReactIntense = function (_React$Component) {
         [].concat(_toConsumableArray(Array(8))).map(function (e, i) {
           return _react2.default.createElement(
             'div',
-            { key: i },
-            _react2.default.createElement('div', null)
+            { key: i + '-outer' },
+            _react2.default.createElement('div', { key: i + '-inner' })
           );
         })
       ) : _react2.default.createElement('div', null);
