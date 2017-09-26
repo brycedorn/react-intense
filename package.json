@@ -4,9 +4,9 @@
   "description": "A React port of the javascript full-size image viewer",
   "main": "dist/ReactIntense.js",
   "scripts": {
-    "build": "webpack -p --config ./client/webpack.config.demo.js",
+    "build": "webpack -p --config ./client/webpack.config.js",
     "build-lib": "cp -R lib/. dist/ && ./node_modules/.bin/babel --plugins transform-react-jsx --presets 'env' lib/ReactIntense.js > dist/ReactIntense.js",
-    "dev": "webpack --config ./client/webpack.config.js && webpack-dev-server --config ./client/webpack.config.demo.js --inline --hot --content-base ./public"
+    "dev": "webpack --config ./client/webpack.config.js && webpack-dev-server --config ./client/webpack.config.js --inline --hot --content-base ./public"
   },
   "keywords": [
     "react",
