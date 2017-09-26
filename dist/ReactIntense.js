@@ -34,7 +34,7 @@ require('./loader.css');
 
 var propTypes = {
   caption: _react2.default.PropTypes.string,
-  classes: _react2.default.PropTypes.string,
+  className: _react2.default.PropTypes.string,
   loader: _react2.default.PropTypes.string,
   src: _react2.default.PropTypes.string.isRequired,
   thumbnailSrc: _react2.default.PropTypes.string,
@@ -400,7 +400,7 @@ var ReactIntense = function (_React$Component) {
     key: 'render',
     value: function render() {
       var _props2 = this.props,
-          classes = _props2.classes,
+          className = _props2.className,
           loader = _props2.loader,
           src = _props2.src,
           thumbnailSrc = _props2.thumbnailSrc,
@@ -410,7 +410,7 @@ var ReactIntense = function (_React$Component) {
 
       var triggerProps = {
         children: this._renderLoader(loader, visible),
-        className: classes + ' ri-trigger' + (visible ? ' clicked' : ''),
+        className: (className || 'ri-trigger') + (visible ? ' clicked' : ''),
         onClick: this._onClick,
         style: { backgroundImage: 'url(' + (thumbnailSrc || src) + ')' }
       };
