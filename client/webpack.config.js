@@ -3,6 +3,8 @@
 var Path = require("path"),
     webpack = require("webpack"),
     HtmlWebpackPlugin = require("html-webpack-plugin"),
+    UglifyJSPlugin = require('uglifyjs-webpack-plugin'),
+    DefinePlugin = require('webpack/lib/DefinePlugin'),
     IS_PRODUCTION = false;
 
 var webpackConfig = module.exports = {
@@ -24,6 +26,10 @@ var webpackConfig = module.exports = {
     new HtmlWebpackPlugin({
       template: "./client/index.html",
       filename: "../index.html"
-    })
+    }),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(IS_PRODUCTION ? 'production' : 'development')
+    }),
+    new UglifyJSPlugin()
   ]
 };

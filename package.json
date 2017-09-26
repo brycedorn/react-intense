@@ -1,11 +1,12 @@
 {
   "name": "react-intense",
-  "version": "0.0.8",
+  "version": "0.1.0",
   "description": "A React port of the javascript full-size image viewer",
-  "main": "lib/ReactIntense.js",
+  "main": "dist/ReactIntense.js",
   "scripts": {
-    "build": "webpack -p --config ./client/webpack.config.js",
-    "dev": "webpack --config ./client/webpack.config.js && webpack-dev-server --config ./client/webpack.config.js --inline --hot --content-base ./public"
+    "build": "webpack -p --config ./client/webpack.config.demo.js",
+    "build-lib": "cp -R lib/. dist/ && ./node_modules/.bin/babel --plugins transform-react-jsx --presets 'env' lib/ReactIntense.js > dist/ReactIntense.js",
+    "dev": "webpack --config ./client/webpack.config.js && webpack-dev-server --config ./client/webpack.config.demo.js --inline --hot --content-base ./public"
   },
   "keywords": [
     "react",
@@ -33,20 +34,26 @@
   },
   "homepage": "http://bryce.io/react-intense",
   "devDependencies": {
+    "autobind-decorator": "^2.1.0",
+    "babel-cli": "^6.26.0",
     "babel-core": "^5.8.35",
     "babel-loader": "^5.4.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
     "css-loader": "^0.25.0",
     "file-loader": "^0.9.0",
     "html-webpack-plugin": "^1.1.0",
     "jsx-loader": "^0.13.2",
-    "react": "^0.14.8",
+    "react": "^15.3.2",
     "react-dom": "^15.3.2",
+    "react-ga": "^2.2.0",
     "react-tools": "^0.12.0",
     "run-sequence": "^1.0.2",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.8.1",
     "stylus": "^0.49.3",
     "stylus-loader": "^2.3.1",
+    "uglifyjs-webpack-plugin": "^0.4.6",
     "url-loader": "^0.5.5",
     "webpack": "^1.13.3",
     "webpack-dev-server": "^1.16.2"
