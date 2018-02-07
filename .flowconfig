@@ -1,0 +1,10 @@
+[options]
+esproposal.decorators=ignore
+emoji=true
+# Flow will only check files with `.js` and `.es6` extensions.
+# By default flow checks only checks `.js`.
+module.file_ext=.js
+module.file_ext=.es6
+
+[version]
+^0.58.0

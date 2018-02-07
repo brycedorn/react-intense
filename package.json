@@ -42,6 +42,7 @@
     "babel-preset-env": "^1.6.0",
     "css-loader": "^0.25.0",
     "file-loader": "^0.9.0",
+    "flow": "^0.2.3",
     "html-webpack-plugin": "^1.1.0",
     "jsx-loader": "^0.13.2",
     "react": "^15.3.2",
