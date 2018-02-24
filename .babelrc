@@ -1,0 +1,17 @@
+{
+  "plugins": [
+    "remove-comments",
+    "transform-decorators-legacy",
+    "transform-decorators",
+    "transform-react-jsx",
+    "transform-flow-strip-types"
+  ],
+  "presets": [
+    "env"
+  ],
+  "env": {
+    "production": {
+      "presets": ["minify"]
+    }
+  }
+}
