@@ -18,43 +18,16 @@ import ReactIntense from 'react-intense'
 <ReactIntense src='img.jpg' />
 ```
 
-and you're good to go!
+## Optional Props
 
-## Additional Props
-
-Title/caption:
-```javascript
-<ReactIntense caption='caption' src='img.pg' title='title' />
-```
-
-Thumbnail image (for lazy loading of main image):
-```javascript
-<ReactIntense src='large_version.jpg' thumbnail='small_version.jpg' />
-```
-
-Trigger (override thumbnail image):
- - If you'd like to completely override the thumbnail image as the trigger for maximizing the image, you may pass in an entire React element.
- - It must accept an `onClick` prop in addition to the generic `className`, `ref`, and `style` props.
-```javascript
-<ReactIntense src='large_version.jpg' trigger={myTrigger} />
-```
-
-Vertical scrolling:
-```javascript
-<ReactIntense src='tall_img.jpg' vertical=true />
-```
-
-Scroll speed (default is `0.05`):
-```javascript
-<ReactIntense src='img.jpg' moveSpeed=0.05 />
-```
-
-Loading indicator (default is none):
- - Requires some CSS for [positioning](https://github.com/brycedorn/react-intense/blob/master/lib/ReactIntense.css#L67) and associated [`div` structure](https://github.com/brycedorn/react-intense/blob/master/lib/ReactIntense.js#L268); demo shows the `spin` loader from [loading.io](http://loading.io/) which is bundled in [`loader.css`](https://github.com/brycedorn/react-intense/blob/master/lib/loader.css).
-
-```javascript
-<ReactIntense src='img.jpg' loader='uil-spin-css' />
-```
+Name | Type | Description
+--- | --- | ---
+title | string | Renders in corner in maximized view.
+caption | string | Renders below title in maximized view.
+trigger | Component<any> | Option to override the thumbnail image as the trigger to maximize the image. Passed `onClick` as prop to trigger maximized view.
+vertical | boolean | Images lock to scrolling either horizontally (default) or vertically.
+moveSpeed | number | How fast to scroll images when following mouse.
+loader | string | The class for the loading animation that shows when the image is being loaded for maximized view. Default is in `loader.css`.
 
 ## Styling
 
