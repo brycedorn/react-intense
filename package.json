@@ -5,7 +5,7 @@
   "main": "dist/ReactIntense.js",
   "scripts": {
     "build": "NODE_ENV=production webpack -p --config ./webpack.config.js",
-    "build-lib": "cp -R lib/. dist/ && ./node_modules/.bin/babel lib/ReactIntense.js > dist/ReactIntense.js",
+    "build-lib": "cp -R lib/. dist/ && npx babel --presets minify lib/ReactIntense.js > dist/ReactIntense.js",
     "dev": "webpack --config ./src/webpack.config.js && webpack-dev-server --config ./src/webpack.config.js --inline --hot --content-base ./public"
   },
   "keywords": [
@@ -41,6 +41,7 @@
     "@babel/preset-react": "^7.0.0",
     "autobind-decorator": "^2.1.0",
     "babel-loader": "^8.0.5",
+    "babel-preset-minify": "^0.5.0",
     "css-loader": "^2.1.0",
     "file-loader": "^3.0.1",
     "flow": "^0.2.3",
