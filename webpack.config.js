@@ -11,7 +11,7 @@ module.exports = {
   mode: process.env.NODE_ENV,
   output: {
     path: `${__dirname}/public`,
-    publicPath: devMode ? 'https://brycedorn.gitlab.io/' : '/',
+    publicPath: devMode ? '/' : 'https://brycedorn.gitlab.io/',
     filename: devMode ? 'bundle.js' : '[name].[hash].js',
   },
   optimization: devMode ? {} : {
