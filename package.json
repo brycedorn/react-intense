@@ -6,7 +6,7 @@
   "scripts": {
     "build": "NODE_ENV=production webpack -p --config ./webpack.config.js",
     "build-lib": "cp -R lib/. dist/ && npx babel --presets minify lib/ReactIntense.js > dist/ReactIntense.js",
-    "dev": "webpack --config ./src/webpack.config.js && webpack-dev-server --config ./src/webpack.config.js --inline --hot --content-base ./public"
+    "dev": "NODE_ENV=development webpack --config ./webpack.config.js && webpack-dev-server --config ./webpack.config.js --inline --hot --content-base ./public"
   },
   "keywords": [
     "react",
