@@ -1,0 +1,16 @@
+image: node:latest
+
+cache:
+  paths:
+  - node_modules/
+
+pages:
+  stage: deploy
+  script:
+  - yarn install
+  - yarn build
+  artifacts:
+    paths:
+    - public
+  only:
+  - master

@@ -1,17 +1,12 @@
 {
   "plugins": [
-    "remove-comments",
-    "transform-decorators-legacy",
-    "transform-decorators",
-    "transform-react-jsx",
-    "transform-flow-strip-types"
+    "@babel/plugin-transform-react-jsx",
+    ["@babel/plugin-proposal-decorators", { "legacy": true }],
+    "@babel/plugin-transform-flow-strip-types"
   ],
   "presets": [
-    "env"
-  ],
-  "env": {
-    "production": {
-      "presets": ["minify"]
-    }
-  }
+    "@babel/preset-env",
+    "@babel/preset-react",
+    "@babel/preset-flow"
+  ]
 }

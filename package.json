@@ -1,12 +1,12 @@
 {
   "name": "react-intense",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A React port of the javascript full-size image viewer",
   "main": "dist/ReactIntense.js",
   "scripts": {
-    "build": "webpack -p --config ./client/webpack.config.js",
+    "build": "NODE_ENV=production webpack -p --config ./webpack.config.js",
     "build-lib": "cp -R lib/. dist/ && ./node_modules/.bin/babel lib/ReactIntense.js > dist/ReactIntense.js",
-    "dev": "webpack --config ./client/webpack.config.js && webpack-dev-server --config ./client/webpack.config.js --inline --hot --content-base ./public"
+    "dev": "webpack --config ./src/webpack.config.js && webpack-dev-server --config ./src/webpack.config.js --inline --hot --content-base ./public"
   },
   "keywords": [
     "react",
@@ -18,49 +18,46 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/brycedorn/react-intense"
+    "url": "https://gitlab.com/brycedorn/react-intense"
   },
   "author": {
     "name": "Bryce Dorn",
     "email": "brycedorn@gmail.com",
     "url": "http://www.bryce.io"
   },
-  "license": {
-    "type": "MIT",
-    "url": "http://www.mit-license.org"
-  },
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/brycedorn/react-intense/issues"
+    "url": "https://gitlab.com/brycedorn/react-intense/issues"
   },
   "homepage": "http://bryce.io/react-intense",
   "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.3",
+    "@babel/plugin-proposal-decorators": "^7.3.0",
+    "@babel/plugin-transform-flow-strip-types": "^7.2.3",
+    "@babel/plugin-transform-react-jsx": "^7.3.0",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-flow": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
     "autobind-decorator": "^2.1.0",
-    "babel-cli": "^6.26.0",
-    "babel-core": "^5.8.35",
-    "babel-loader": "^5.4.0",
-    "babel-plugin-remove-comments": "^2.0.0",
-    "babel-plugin-transform-decorators": "^6.24.1",
-    "babel-plugin-transform-decorators-legacy": "^1.3.4",
-    "babel-plugin-transform-react-jsx": "^6.24.1",
-    "babel-preset-env": "^1.6.0",
-    "babel-preset-flow": "^6.23.0",
-    "babel-preset-minify": "^0.3.0",
-    "css-loader": "^0.25.0",
-    "file-loader": "^0.9.0",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.0",
+    "file-loader": "^3.0.1",
     "flow": "^0.2.3",
-    "html-webpack-plugin": "^1.1.0",
+    "html-webpack-plugin": "^3.2.0",
     "jsx-loader": "^0.13.2",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "react-ga": "^2.4.1",
-    "run-sequence": "^1.0.2",
+    "mini-css-extract-plugin": "^0.5.0",
+    "progress-bar-webpack-plugin": "^1.12.1",
     "sass-loader": "^4.0.2",
-    "style-loader": "^0.8.1",
-    "stylus": "^0.49.3",
-    "stylus-loader": "^2.3.1",
-    "uglifyjs-webpack-plugin": "^0.4.6",
+    "style-loader": "^0.23.1",
+    "uglifyjs-webpack-plugin": "^2.1.1",
     "url-loader": "^0.5.5",
-    "webpack": "^1.13.3",
-    "webpack-dev-server": "^1.16.2"
+    "webpack": "^4.29.5",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.2.0"
+  },
+  "dependencies": {
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3"
   }
 }

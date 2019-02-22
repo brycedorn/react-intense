@@ -1,32 +1,37 @@
 'use strict';
 
-require("../styles/index.styl");
+require("./styles.css");
 
 import React from 'react'
 import { render } from 'react-dom'
-import ReactIntense from '../../lib/ReactIntense'
+import ReactIntense from '../lib/ReactIntense'
 
-import ga from 'react-ga'
+// import ga from 'react-ga'
+const ga = {
+  initialize: () => {},
+  event: () => {},
+  pageview: () => {}
+};
 
 const DemoImages = [{
   caption: 'An annual month-long festival in Kyoto',
   className: 'demo-image first',
-  src: require("../img/horse.jpg"),
-  thumbnailSrc: require("../img/horse_thumb.jpg"),
+  src: require("./img/horse.jpg"),
+  thumbnailSrc: require("./img/horse_thumb.jpg"),
   title: 'Gion Matsuri',
 },
 {
   caption: 'Umbrellas are key!',
   className: 'demo-image second',
-  src: require("../img/rain.jpg"),
-  thumbnailSrc: require("../img/rain_thumb.jpg"),
+  src: require("./img/rain.jpg"),
+  thumbnailSrc: require("./img/rain_thumb.jpg"),
   title: 'Rainy rain',
   vertical: true,
 }, {
   caption: 'Ancient Buddhist temple on a cliff',
   className: 'demo-image third',
-  src: require("../img/temple.jpg"),
-  thumbnailSrc: require("../img/temple_thumb.jpg"),
+  src: require("./img/temple.jpg"),
+  thumbnailSrc: require("./img/temple_thumb.jpg"),
   title: 'Kiyomizu-dera',
 }]
 

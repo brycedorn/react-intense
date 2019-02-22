@@ -35,8 +35,8 @@ Feel free to use and/or customize the provided styles in `lib/ReactIntense.css`.
 
 ## Issues
 
- If you find any issues with this component, please [report](https://github.com/brycedorn/react-intense/issues) them!
- 
+ If you find any issues with this component, please [report](https://gitlab.com/brycedorn/react-intense/issues) them!
+
 ## Thanks
 * [Tim Holman](https://github.com/tholman)
 * [Paul Irish](https://gist.github.com/paulirish/1579671)
