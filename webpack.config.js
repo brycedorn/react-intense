@@ -55,7 +55,7 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      publicPath: `"${publicPath}"`,
+      publicPath: `"${publicPath}/"`,
     }),
     new HtmlWebpackPlugin({
       title: 'The Movie Mashup Game',
