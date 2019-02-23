@@ -5,14 +5,13 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 
 const devMode = process.env.NODE_ENV === 'development';
-const publicPath = devMode ? '/' : 'https://brycedorn.gitlab.io/react-intense';
 
 module.exports = {
   entry: './src/index.js',
   mode: process.env.NODE_ENV,
   output: {
     path: `${__dirname}/public`,
-    publicPath,
+    publicPath: '/',
     filename: devMode ? 'bundle.js' : '[name].[hash].js',
   },
   optimization: devMode ? {} : {
@@ -54,9 +53,6 @@ module.exports = {
     ],
   },
   plugins: [
-    new webpack.DefinePlugin({
-      publicPath: `"${publicPath}/"`,
-    }),
     new HtmlWebpackPlugin({
       title: 'The Movie Mashup Game',
       description:

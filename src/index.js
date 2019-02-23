@@ -56,8 +56,8 @@ class IntenseDemos extends React.Component {
           onClick={() => this.onClick(title)}
           key={title}
           loader='uil-spin-css'
-          src={`${publicPath}${src}`}
-          thumbnailSrc={`${publicPath}${thumbnailSrc}`}
+          src={src}
+          thumbnailSrc={thumbnailSrc}
           title={title}
           vertical={vertical}
         />
