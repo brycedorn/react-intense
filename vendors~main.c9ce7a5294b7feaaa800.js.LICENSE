@@ -1,0 +1,114 @@
+/* 0 */
+
+/***/
+
+/* 1 */
+
+/* unused harmony export boundMethod */
+
+/* unused harmony export boundClass */
+
+/* harmony export (binding) */
+
+/**
+ * Return a descriptor removing the value and returning a getter
+ * The getter will return a .bind version of the function
+ * and memoize the result against a symbol on the instance
+ */
+
+// In IE11 calling Object.defineProperty has a side-effect of evaluating the
+
+// getter for the property which is being replaced. This causes infinite
+
+// recursion and an "Out of stack space" error.
+
+// eslint-disable-next-line no-prototype-builtins
+
+/**
+ * Use boundMethod to bind all methods on the target.prototype
+ */
+
+// (Using reflect to get all keys including symbols)
+
+// Use Reflect if exists
+
+// Use symbols if support is provided
+
+// Ignore special case target method
+
+// Only methods need binding
+
+/* 2 */
+
+/*
+object-assign
+(c) Sindre Sorhus
+@license MIT
+*/
+
+/* eslint-disable no-unused-vars */
+
+// Detect buggy property enumeration order in older V8 versions.
+
+// https://bugs.chromium.org/p/v8/issues/detail?id=4118
+
+// eslint-disable-line no-new-wrappers
+
+// https://bugs.chromium.org/p/v8/issues/detail?id=3056
+
+// We don't expect any of the above to throw, but better to be safe.
+
+/* 3 */
+
+// DCE check should happen before ReactDOM bundle executes so that
+
+// DevTools can report bad minification during injection.
+
+/* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */
+
+// Verify that the code above has been dead code eliminated (DCE'd).
+
+// DevTools shouldn't crash React, no matter what.
+
+// We should still report in case we break this code.
+
+/* 4 */
+
+/* 5 */
+
+/** @license React v16.13.1
+ * react.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/* 6 */
+
+/** @license React v16.13.1
+ * react-dom.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/*
+ Modernizr 3.0.0pre (Custom Build) | MIT
+*/
+
+/* 7 */
+
+/* 8 */
+
+/** @license React v0.19.1
+ * scheduler.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
