@@ -6,7 +6,6 @@ import React from 'react'
 import { render } from 'react-dom'
 import ReactIntense from '../lib/ReactIntense'
 
-// import ga from 'react-ga'
 const ga = {
   initialize: () => {},
   event: () => {},

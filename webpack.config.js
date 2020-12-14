@@ -11,7 +11,7 @@ module.exports = {
   mode: process.env.NODE_ENV,
   output: {
     path: `${__dirname}/public`,
-    publicPath: '/',
+    publicPath: devMode ? '/' : 'https://bryce.io/react-intense/',
     filename: devMode ? 'bundle.js' : '[name].[hash].js',
   },
   optimization: devMode ? {} : {
@@ -54,12 +54,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'The Movie Mashup Game',
-      description:
-        'From a plot synopsis combining the plots of two movies that share an overlapping word in the title, determine the mashed-up title of the hybrid.',
-      image: 'https://www.movie-mashup.com/image.jpg',
-      url: 'https://movie-mashup.com/',
-      template: 'src/index.html',
+      template: 'src/index.html'
     }),
     new MiniCssExtractPlugin({
       filename: devMode ? '[name].css' : '[name].[hash].css',

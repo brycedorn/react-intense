@@ -2,7 +2,7 @@
 
 This component is a port of [Intense Image Viewer](http://tholman.com/intense-images/) for use with React.
 
-[Demo](https://react-intense.bryce.io).
+[Demo](https://bryce.io/react-intense).
 
 ## Usage
 
@@ -33,7 +33,7 @@ Feel free to use and/or customize the provided styles in `lib/ReactIntense.css`.
 
 ## Issues
 
- If you find any issues with this component, please [report](https://gitlab.com/brycedorn/react-intense/issues) them!
+ If you find any issues with this component, please [report](https://github.com/brycedorn/react-intense/issues) them!
 
 ## Thanks
 * [Tim Holman](https://github.com/tholman)
