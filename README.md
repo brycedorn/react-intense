@@ -1,5 +1,7 @@
 # react-intense
 
+[![npm version](https://badge.fury.io/js/react-intense.svg)](https://badge.fury.io/js/react-intense)
+
 This component is a port of [Intense Image Viewer](http://tholman.com/intense-images/) for use with React.
 
 [Demo](https://bryce.io/react-intense).
