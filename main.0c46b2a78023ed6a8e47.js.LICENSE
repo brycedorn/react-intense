@@ -78,11 +78,11 @@
 
 /* 9 */
 
-/* 10 */
-
 /***/
 
 // https://gist.github.com/paulirish/1579671
+
+/* 10 */
 
 /* 11 */
 
@@ -98,16 +98,16 @@
 
 /* 17 */
 
-/* 18 */
-
 // ESM COMPAT FLAG
 
 // EXTERNAL MODULE: ./node_modules/react/index.js
 
 /*#__PURE__*/
 
+// CONCATENATED MODULE: ./lib/ReactIntense.js
+
 /*
- * React Intense v0.1.7
+ * React Intense v0.1.8
  * https://github.com/brycedorn/react-intense
  *
  * A React component of https://github.com/tholman/intense-images
