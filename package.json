@@ -37,6 +37,7 @@
     "@babel/plugin-transform-flow-strip-types": "^7.17.12",
     "@babel/plugin-transform-react-jsx": "^7.17.12",
     "@babel/preset-flow": "^7.17.12",
+    "@parcel/transformer-css": "^2.6.0",
     "babel-preset-minify": "^0.5.2",
     "mini-css-extract-plugin": "^0.5.0",
     "parcel": "^2.6.0",
