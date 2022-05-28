@@ -43,9 +43,10 @@ footer h1 {
   margin-top: 0px;
   margin-bottom: 20px;
 }
-.demos {
-  text-align: center;
-  margin-top: 20px;
+#demos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .demo-image {
   display: inline-block;

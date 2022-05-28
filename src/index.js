@@ -1,79 +1,51 @@
-'use strict';
-
-require("./styles.css");
-
 import React from 'react'
 import { render } from 'react-dom'
-import ReactIntense from '../lib/ReactIntense'
+import ReactIntense from '../dist/ReactIntense'
 
-const ga = {
-  initialize: () => {},
-  event: () => {},
-  pageview: () => {}
-};
+import horse from "./img/horse.jpg"
+import horse_thumb from "./img/horse_thumb.jpg"
+import rain from "./img/rain.jpg"
+import rain_thumb from "./img/rain_thumb.jpg"
+import temple from "./img/temple.jpg"
+import temple_thumb from "./img/temple_thumb.jpg"
 
-const DemoImages = [{
+const images = [{
   caption: 'An annual month-long festival in Kyoto',
   className: 'demo-image first',
-  src: require("./img/horse.jpg"),
-  thumbnailSrc: require("./img/horse_thumb.jpg"),
+  src: horse,
+  thumbnailSrc: horse_thumb,
   title: 'Gion Matsuri',
 },
 {
   caption: 'Umbrellas are key!',
   className: 'demo-image second',
-  src: require("./img/rain.jpg"),
-  thumbnailSrc: require("./img/rain_thumb.jpg"),
+  src: rain,
+  thumbnailSrc: rain_thumb,
   title: 'Rainy rain',
   vertical: true,
 }, {
   caption: 'Ancient Buddhist temple on a cliff',
   className: 'demo-image third',
-  src: require("./img/temple.jpg"),
-  thumbnailSrc: require("./img/temple_thumb.jpg"),
+  src: temple,
+  thumbnailSrc: temple_thumb,
   title: 'Kiyomizu-dera',
 }]
 
-class IntenseDemos extends React.Component {
-  componentWillMount() {
-    ga.initialize('UA-40008117-16')
-  }
-
-  onClick(imageTitle) {
-    ga.event({
-      category: 'Demo Image Click',
-      action: imageTitle
-    })
-  }
-
-  _renderImages (images) {
-    return images.map(
-      ({ caption, className, src, thumbnailSrc, title, vertical }) => (
-        <ReactIntense
-          caption={caption}
-          className={className}
-          onClick={() => this.onClick(title)}
-          key={title}
-          loader='uil-spin-css'
-          src={src}
-          thumbnailSrc={thumbnailSrc}
-          title={title}
-          vertical={vertical}
-        />
-      )
+function IntenseDemos() {
+    return images.map(({ caption, className, src, thumbnailSrc, title, vertical }) => (
+      <ReactIntense
+        caption={caption}
+        className={className}
+        key={title}
+        loader='uil-spin-css'
+        src={src}
+        thumbnailSrc={thumbnailSrc}
+        title={title}
+        vertical={vertical}
+      />
     )
-  }
-
-  render() {
-    ga.pageview('/')
-
-    return (
-      <div id="react-root">
-        {this._renderImages(DemoImages)}
-      </div>
-    );
-  }
+  )
 }
 
-render(<IntenseDemos />, document.getElementById('demos'));
-document.body.setAttribute("style","display:block");
+render(<IntenseDemos />, document.getElementById('demos'))
+document.body.setAttribute("style","display:block")
