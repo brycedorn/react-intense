@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from 'react-dom'
-import ReactIntense from '../dist/ReactIntense'
+import ReactIntense from '../lib/ReactIntense'
 
 import horse from "./img/horse.jpg"
 import horse_thumb from "./img/horse_thumb.jpg"

@@ -4,7 +4,8 @@
   "description": "A React port of the javascript full-size image viewer",
   "scripts": {
     "build": "parcel build src/index.html --dist-dir public",
-    "build-lib": "cp -R lib/. dist/ && babel lib/ReactIntense.js > dist/ReactIntense.js"
+    "build-lib": "cp -R lib/. dist/ && babel lib/ReactIntense.js > dist/ReactIntense.js",
+    "start": "parcel src/index.html --dist-dir public"
   },
   "keywords": [
     "react",
@@ -39,6 +40,7 @@
     "@babel/preset-flow": "^7.17.12",
     "babel-preset-minify": "^0.5.2",
     "parcel": "^2.6.0",
+    "process": "^0.11.10",
     "react": "^16.8.3",
     "react-dom": "^16.8.3"
   },
