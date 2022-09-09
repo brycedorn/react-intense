@@ -1,6 +1,6 @@
 {
   "name": "react-intense",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "A React port of the javascript full-size image viewer",
   "scripts": {
     "build": "parcel build src/index.html --dist-dir public",
@@ -42,11 +42,11 @@
     "babel-preset-minify": "^0.5.2",
     "parcel": "^2.6.0",
     "process": "^0.11.10",
-    "react": "^16.8.3",
-    "react-dom": "^16.8.3"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "peerDependencies": {
-    "react": "^16.8.3",
-    "react-dom": "^16.8.3"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   }
 }
