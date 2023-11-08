@@ -27,8 +27,6 @@
   overflow: hidden;
   z-index: 999999;
   margin: 0px;
-  webkit-transition: opacity 150ms cubic-bezier(0, 0, 0.26, 1);
-  moz-transition: opacity 150ms cubic-bezier(0, 0, 0.26, 1);
   transition: opacity 150ms cubic-bezier(0, 0, 0.26, 1);
 }
 
@@ -40,7 +38,6 @@
   padding: 20px;
   color: #fff;
   word-spacing: 0.2px;
-  webkit-font-smoothing: antialiased;
   text-shadow: -1px 0px 1px rgba(0,0,0,0.4);
 }
 

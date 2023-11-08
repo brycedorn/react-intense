@@ -1,6 +1,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 import ReactIntense from '../lib/ReactIntense'
+import '../lib/polyfills'
 
 import horse from "./img/horse.jpg"
 import horse_thumb from "./img/horse_thumb.jpg"
@@ -41,11 +42,10 @@ function IntenseDemos() {
         src={src}
         thumbnailSrc={thumbnailSrc}
         title={title}
-        vertical={vertical}
+        vertical={!!vertical}
       />
     )
   )
 }
 
 render(<IntenseDemos />, document.getElementById('demos'))
-document.body.setAttribute("style","display:block")
