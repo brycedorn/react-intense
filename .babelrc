@@ -1,11 +1,10 @@
 {
-  "plugins": [
-    "@babel/plugin-transform-modules-commonjs"
-  ],
+  "plugins": ["@babel/plugin-transform-modules-commonjs"],
   "presets": [
+    "@babel/preset-env",
     "@babel/preset-react",
-    "@babel/preset-typescript"
-    // "minify"
+    "@babel/preset-typescript",
+    "minify"
   ],
   "comments": false
 }

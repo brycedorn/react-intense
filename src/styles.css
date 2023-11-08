@@ -1,4 +1,4 @@
-@import "../lib/ReactIntense.css";
+@import '../lib/ReactIntense.css';
 
 * {
   -webkit-font-smoothing: antialiased;
@@ -7,7 +7,7 @@
 }
 html,
 body {
-  font-family: "Ubuntu Mono", monospace;
+  font-family: 'Ubuntu Mono', monospace;
   margin: 0px;
   height: 100%;
   width: 100%;

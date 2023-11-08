@@ -1,5 +1,5 @@
 /*
- * React Intense v0.1.2
+ * React Intense v0.2.0
  * https://github.com/brycedorn/react-intense
  *
  * A React component of https://github.com/tholman/intense-images
@@ -10,27 +10,27 @@
  * @flow
  */
 
-import React, {useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 
 type Props = {
-  caption: string,
-  className: string,
-  loader: string,
-  moveSpeed?: number,
-  onClick?: (e: MouseEvent) => void,
-  src: string,
-  thumbnailSrc: string,
-  title: string,
-  invert?: boolean,
-  trigger?: typeof React.Component,
-  vertical?: boolean
-}
+  caption: string;
+  className: string;
+  loader: string;
+  moveSpeed?: number;
+  onClick?: (e: React.MouseEvent) => void;
+  src: string;
+  thumbnailSrc: string;
+  title: string;
+  invert?: boolean;
+  trigger?: typeof React.Component;
+  vertical?: boolean;
+};
 
-const KEYCODE_ESC = 27
+const KEYCODE_ESC = 27;
 const MIN_DIST_THRESHOLD = 0.0001;
 const DEFAULT_MOVE_SPEED = 0.02;
 
-const initialOverflowValue = document.body.style.overflow || "unset";
+const initialOverflowValue = document.body.style.overflow || 'unset';
 
 function ReactIntense(props: Props) {
   const {
@@ -49,33 +49,33 @@ function ReactIntense(props: Props) {
 
   const [distance, setDistance] = useState(0);
   const [loaded, setLoaded] = useState(false);
-  const mouseDest = useRef<{ x: number, y: number } | undefined>({
+  const mouseDest = useRef<{ x: number; y: number } | undefined>({
     x: 0,
     y: 0,
   });
-  const mouseCurr = useRef<{ x: number, y: number } | undefined>({
+  const mouseCurr = useRef<{ x: number; y: number } | undefined>({
     x: window.innerWidth / 2,
     y: window.innerHeight / 2,
   });
   const [transform, setTransform] = useState('');
   const [visible, setVisible] = useState(false);
   const intervalKey = useRef<number | undefined>();
-  
+
   function positionTarget() {
     if (!imgRef.current || !mouseCurr.current || !mouseDest.current) {
       return;
     }
-  
+
     const newX = mouseCurr.current.x + (mouseDest.current.x - mouseCurr.current.x) * moveSpeed;
     const newY = mouseCurr.current.y + (mouseDest.current.y - mouseCurr.current.y) * moveSpeed;
     const dist = Math.abs(newX - mouseCurr.current.x) + Math.abs(newY - mouseCurr.current.y);
-  
+
     if (dist > MIN_DIST_THRESHOLD) {
       const newMouseCurr = {
         x: newX,
         y: newY,
       };
-  
+
       let newTransform = '';
       let newDistance = -1;
       if (vertical) {
@@ -98,7 +98,7 @@ function ReactIntense(props: Props) {
 
       setTransform(newTransform);
       setDistance(newDistance);
-      
+
       mouseCurr.current = newMouseCurr;
     }
   }
@@ -108,16 +108,16 @@ function ReactIntense(props: Props) {
   }
 
   function addEventListeners() {
-    imgRef.current?.addEventListener('mousemove', _onMouseMove);
-    imgRef.current?.addEventListener('touchmove', _onTouchMove);
+    imgRef.current?.addEventListener('mousemove', (e) => _onMouseMove(e.clientX, e.clientY));
+    imgRef.current?.addEventListener('touchmove', (e) => _onTouchMove(e.touches[0]));
     imgRef.current?.addEventListener('click', hideViewer);
     window.addEventListener('keyup', _onKeyUp);
     loop();
   }
 
   function removeEventListeners() {
-    imgRef.current?.removeEventListener('mousemove', _onMouseMove);
-    imgRef.current?.removeEventListener('touchmove', _onTouchMove);
+    imgRef.current?.removeEventListener('mousemove', (e) => _onMouseMove(e.clientX, e.clientY));
+    imgRef.current?.removeEventListener('touchmove', (e) => _onTouchMove(e.touches[0]));
     imgRef.current?.removeEventListener('click', hideViewer);
     window.removeEventListener('keyup', _onKeyUp);
   }
@@ -150,7 +150,7 @@ function ReactIntense(props: Props) {
   }
 
   // Events
-  function _onClick(e: MouseEvent) {
+  function _onClick(e: React.MouseEvent<HTMLDivElement>) {
     e.preventDefault();
 
     if (onClick) {
@@ -158,7 +158,6 @@ function ReactIntense(props: Props) {
     }
 
     setVisible(true);
-    _onMouseMove(e);
     lockBody();
   }
 
@@ -175,19 +174,18 @@ function ReactIntense(props: Props) {
     addEventListeners();
   }
 
-  function _onMouseMove(e: MouseEvent) {
+  function _onMouseMove(x: number, y: number) {
     mouseDest.current = {
-        x: e.clientX,
-        y: e.clientY,
-      }
+      x,
+      y,
+    };
   }
 
-  function _onTouchMove(e: TouchEvent) {
-    e.preventDefault();
+  function _onTouchMove(touch: Touch) {
     mouseDest.current = {
-        x: e.touches[0].clientX,
-        y: e.touches[0].clientY,
-      }
+      x: touch.clientX,
+      y: touch.clientY,
+    };
   }
 
   // View helpers
@@ -205,9 +203,7 @@ function ReactIntense(props: Props) {
           </div>
         ))}
       </div>
-    ) : (
-      <div />
-    );
+    ) : null;
   }
 
   function renderViewer() {
@@ -220,13 +216,13 @@ function ReactIntense(props: Props) {
     };
 
     return visible ? (
-        <figure className="ri-container" style={{ opacity: loaded ? 1 : 0 }}>
-          <img ref={imgRef} src={src} style={transformStyle} onLoad={_onLoad} />
-          <figcaption className="ri-caption-container">
-            <h1 className="ri-title">{title}</h1>
-            <h2 className="ri-caption">{caption}</h2>
-          </figcaption>
-        </figure>
+      <figure className="ri-container" style={{ opacity: loaded ? 1 : 0 }}>
+        <img ref={imgRef} src={src} style={transformStyle} onLoad={_onLoad} />
+        <figcaption className="ri-caption-container">
+          <h1 className="ri-title">{title}</h1>
+          <h2 className="ri-caption">{caption}</h2>
+        </figcaption>
+      </figure>
     ) : null;
   }
 
@@ -238,8 +234,8 @@ function ReactIntense(props: Props) {
       <TriggerElement
         children={renderLoader(loader)}
         className={`${className} ri-trigger ${visible ? ' clicked' : ''}`}
-        onClick={e => _onClick(e)}
-        style={{ backgroundImage: `url(${thumbnailSrc || src})`}}
+        onClick={(e) => _onClick(e)}
+        style={{ backgroundImage: `url(${thumbnailSrc || src})` }}
       />
       {renderViewer()}
     </div>

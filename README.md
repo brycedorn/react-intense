@@ -2,7 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/react-intense.svg)](https://badge.fury.io/js/react-intense) [![Build and Deploy](https://github.com/brycedorn/react-intense/actions/workflows/deploy.yml/badge.svg)](https://github.com/brycedorn/react-intense/actions/workflows/deploy.yml)
 
-This component is a port of [Intense Image Viewer](http://tholman.com/intense-images/) for use with React.
+This component is a port of [Intense Image Viewer](http://tholman.com/intense-images/) for use with React. Now with hooks!
 
 [Demo](https://bryce.io/react-intense).
 
