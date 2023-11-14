@@ -1,11 +1,12 @@
 {
   "name": "react-intense",
-  "version": "0.1.14",
+  "version": "0.2.0",
   "description": "A React port of the javascript full-size image viewer",
   "scripts": {
     "build": "parcel build src/index.html --dist-dir public",
-    "build-lib": "babel lib --out-dir dist --copy-files",
-    "start": "parcel src/index.html --dist-dir public"
+    "build-lib": "rm -rf dist && babel --extensions .tsx lib --out-dir dist --copy-files",
+    "start": "parcel src/index.html --dist-dir public",
+    "lint": "npx prettier src lib --write"
   },
   "main": "dist/ReactIntense.js",
   "keywords": [
@@ -26,7 +27,7 @@
   "author": {
     "name": "Bryce Dorn",
     "email": "brycedorn@gmail.com",
-    "url": "http://www.bryce.io"
+    "url": "https://www.bryce.io"
   },
   "license": "MIT",
   "bugs": {
@@ -34,24 +35,25 @@
   },
   "homepage": "https://bryce.io/react-intense",
   "devDependencies": {
-    "@babel/cli": "^7.17.10",
-    "@babel/core": "^7.18.2",
-    "@babel/plugin-transform-flow-strip-types": "^7.17.12",
-    "@babel/plugin-transform-modules-commonjs": "^7.18.6",
-    "@babel/plugin-transform-react-jsx": "^7.17.12",
-    "@babel/preset-flow": "^7.17.12",
+    "@babel/cli": "^7.23.0",
+    "@babel/core": "^7.23.2",
+    "@babel/plugin-transform-modules-commonjs": "^7.23.0",
+    "@babel/preset-env": "^7.23.2",
+    "@babel/preset-react": "^7.22.15",
+    "@babel/preset-typescript": "^7.23.2",
     "@parcel/css": "^1.9.0",
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
     "babel-preset-minify": "^0.5.2",
     "parcel": "^2.6.0",
-    "process": "^0.11.10",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
-  },
-  "peerDependencies": {
-    "react": ">= 16.8.0",
-    "react-dom": ">= 16.8.0"
+    "prettier": "3.0.3",
+    "process": "^0.11.10"
   },
   "targets": {
     "main": false
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
