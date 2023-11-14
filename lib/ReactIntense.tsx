@@ -6,8 +6,6 @@
  *
  * Released under the MIT license
  * https://mit-license.org
- *
- * @flow
  */
 
 import React, { useRef, useState } from 'react';
