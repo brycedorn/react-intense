@@ -49,11 +49,11 @@ function ReactIntense(props: Props) {
 
   const [distance, setDistance] = useState(0);
   const [loaded, setLoaded] = useState(false);
-  const mouseDest = useRef<{ x: number; y: number } | undefined>({
+  const mouseDest = useRef<{ x: number; y: number }>({
     x: 0,
     y: 0,
   });
-  const mouseCurr = useRef<{ x: number; y: number } | undefined>({
+  const mouseCurr = useRef<{ x: number; y: number }>({
     x: window.innerWidth / 2,
     y: window.innerHeight / 2,
   });
@@ -62,7 +62,7 @@ function ReactIntense(props: Props) {
   const intervalKey = useRef<number | undefined>();
 
   function positionTarget() {
-    if (!imgRef.current || !mouseCurr.current || !mouseDest.current) {
+    if (!imgRef.current) {
       return;
     }
 
@@ -156,6 +156,11 @@ function ReactIntense(props: Props) {
     if (onClick) {
       onClick(e);
     }
+
+    mouseDest.current = {
+      x: e.clientX,
+      y: e.clientY,
+    };
 
     setVisible(true);
     lockBody();
