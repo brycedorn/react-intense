@@ -1,5 +1,5 @@
 /*
- * React Intense v0.2.0
+ * React Intense v0.2.1
  * https://github.com/brycedorn/react-intense
  *
  * A React component of https://github.com/tholman/intense-images
@@ -235,11 +235,12 @@ function ReactIntense(props: Props) {
   return (
     <div className="ri-wrapper">
       <TriggerElement
-        children={renderLoader(loader)}
         className={`${className} ri-trigger ${visible ? ' clicked' : ''}`}
         onClick={(e) => _onClick(e)}
         style={{ backgroundImage: `url(${thumbnailSrc || src})` }}
-      />
+      >
+        {renderLoader(loader)}
+      </TriggerElement>
       {renderViewer()}
     </div>
   );

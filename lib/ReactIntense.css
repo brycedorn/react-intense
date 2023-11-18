@@ -14,11 +14,6 @@
     no-drop;
 }
 
-.ri-wrapper {
-  display: inline-block;
-  margin: 0 8px;
-}
-
 .ri-wrapper a.clicked {
   box-shadow: inset 0 0 0 500px rgba(0, 0, 0, 0.2);
 }
@@ -69,12 +64,6 @@
   margin-top: 5px;
 }
 
-.ri-loader {
-  position: relative;
-  left: 30%;
-  top: 30%;
-}
-
 .ri-loader > div {
   width: 12px;
   height: 12px;
@@ -87,9 +76,11 @@
 }
 
 .ri-trigger {
-  display: inline-block;
   width: 200px;
   height: 200px;
   background-size: cover;
   background-position: 50% 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
