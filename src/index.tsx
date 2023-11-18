@@ -44,7 +44,6 @@ function IntenseDemos() {
       caption={caption}
       className={className}
       key={title}
-      loader="uil-spin-css"
       src={src}
       thumbnailSrc={thumbnailSrc}
       title={title}

@@ -14,7 +14,7 @@
     no-drop;
 }
 
-.ri-wrapper a.clicked {
+.ri-wrapper .ri-clicked {
   box-shadow: inset 0 0 0 500px rgba(0, 0, 0, 0.2);
 }
 
@@ -64,17 +64,6 @@
   margin-top: 5px;
 }
 
-.ri-loader > div {
-  width: 12px;
-  height: 12px;
-  margin-left: 2px;
-  margin-top: 2px;
-}
-
-.ri-loader > div > div {
-  background: #fff;
-}
-
 .ri-trigger {
   width: 200px;
   height: 200px;
@@ -83,4 +72,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.ri-loader {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(255,255,255,0.2);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
+}
+@keyframes spin {
+  to { -webkit-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+  to { -webkit-transform: rotate(360deg); }
 }

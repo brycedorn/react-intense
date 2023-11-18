@@ -27,7 +27,7 @@ import ReactIntense from 'react-intense'
 | trigger   | Component<any> | Option to override the thumbnail image as the trigger to maximize the image. Passed `onClick` as prop to trigger maximized view. |
 | vertical  | boolean        | Images lock to scrolling either horizontally (default) or vertically.                                                            |
 | moveSpeed | number         | How fast to scroll images when following mouse.                                                                                  |
-| loader    | string         | The class for the loading animation that shows when the image is being loaded for maximized view. Default is in `loader.css`.    |
+| loader    | string         | The class for the loading animation that shows when the image is being loaded for maximized view. Default is `'ri-loader'`.    |
 
 ## Styling
 

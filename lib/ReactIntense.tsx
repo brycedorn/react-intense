@@ -13,7 +13,7 @@ import React, { useRef, useState } from 'react';
 type Props = {
   caption: string;
   className: string;
-  loader: string;
+  loader?: string;
   moveSpeed?: number;
   onClick?: (e: React.MouseEvent) => void;
   src: string;
@@ -197,15 +197,9 @@ function ReactIntense(props: Props) {
     stop();
   }
 
-  function renderLoader(loaderClassName: string) {
-    return visible && loaderClassName ? (
-      <div className={`${loaderClassName} ri-loader`}>
-        {[...Array(8)].map((e, i) => (
-          <div key={`${i}-outer`}>
-            <div key={`${i}-inner`}></div>
-          </div>
-        ))}
-      </div>
+  function renderLoader() {
+    return visible ? (
+      <div className={`${loader} ri-loader`}></div>
     ) : null;
   }
 
@@ -235,11 +229,11 @@ function ReactIntense(props: Props) {
   return (
     <div className="ri-wrapper">
       <TriggerElement
-        className={`${className} ri-trigger ${visible ? ' clicked' : ''}`}
+        className={`${className} ri-trigger ${visible ? ' ri-clicked' : ''}`}
         onClick={(e) => _onClick(e)}
         style={{ backgroundImage: `url(${thumbnailSrc || src})` }}
       >
-        {renderLoader(loader)}
+        {renderLoader()}
       </TriggerElement>
       {renderViewer()}
     </div>
