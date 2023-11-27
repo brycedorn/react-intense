@@ -1,9 +1,9 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import ReactIntense from '../dist/ReactIntense';
+import ReactIntense, { useIntenseMaximize } from '../dist/ReactIntense';
 import '../dist/polyfills';
 // for local dev, use the following instead:
-// import ReactIntense from '../lib/ReactIntense';
+// import ReactIntense, { useIntenseMaximize } from '../lib/ReactIntense';
 // import '../lib/polyfills';
 
 import horse from './img/horse.jpg';
@@ -38,18 +38,38 @@ const images = [
   },
 ];
 
+function HookDemo() {
+  const { maximize, renderViewer, triggered } = useIntenseMaximize(images[0]);
+
+  return (
+    <>
+      <button onClick={maximize} disabled={triggered}>
+        {triggered ? 'Loading...' : 'Trigger hook'}
+      </button>
+      {renderViewer()}
+    </>
+  );
+}
+
 function IntenseDemos() {
-  return images.map(({ caption, className, src, thumbnailSrc, title, vertical }) => (
-    <ReactIntense
-      caption={caption}
-      className={className}
-      key={title}
-      src={src}
-      thumbnailSrc={thumbnailSrc}
-      title={title}
-      vertical={!!vertical}
-    />
-  ));
+  return (
+    <>
+      <div className="gallery">
+        {images.map(({ caption, className, src, thumbnailSrc, title, vertical }) => (
+          <ReactIntense
+            caption={caption}
+            className={className}
+            key={title}
+            src={src}
+            thumbnailSrc={thumbnailSrc}
+            title={title}
+            vertical={!!vertical}
+          />
+        ))}
+      </div>
+      <HookDemo />
+    </>
+  );
 }
 
 const element = document.getElementById('demos');

@@ -45,7 +45,7 @@ footer h1 {
   margin-top: 0px;
   margin-bottom: 20px;
 }
-#demos {
+#demos .gallery {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -57,6 +57,11 @@ footer h1 {
   height: 290px;
   background-size: cover;
   background-position: 50% 50%;
+}
+button {
+  margin: 16px;
+  width: 100px;
+  height: 32px;
 }
 footer h1 {
   margin-top: 16px;

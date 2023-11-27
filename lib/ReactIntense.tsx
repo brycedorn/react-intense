@@ -1,5 +1,5 @@
 /*
- * React Intense v0.2.1
+ * React Intense v0.2.2
  * https://github.com/brycedorn/react-intense
  *
  * A React component of https://github.com/tholman/intense-images
@@ -13,14 +13,13 @@ import React, { useRef, useState } from 'react';
 type Props = {
   caption: string;
   className: string;
-  loader?: string;
+  renderLoader?: () => React.ReactNode;
   moveSpeed?: number;
   onClick?: (e: React.MouseEvent) => void;
   src: string;
   thumbnailSrc: string;
   title: string;
   invert?: boolean;
-  trigger?: typeof React.Component;
   vertical?: boolean;
 };
 
@@ -30,20 +29,8 @@ const DEFAULT_MOVE_SPEED = 0.02;
 
 const initialOverflowValue = document.body.style.overflow || 'unset';
 
-function ReactIntense(props: Props) {
-  const {
-    className,
-    loader,
-    src,
-    thumbnailSrc,
-    trigger,
-    onClick,
-    moveSpeed = DEFAULT_MOVE_SPEED,
-    vertical,
-    invert,
-    caption,
-    title,
-  } = props;
+export function useIntenseMaximize(props: Props) {
+  const { src, onClick, moveSpeed = DEFAULT_MOVE_SPEED, vertical, invert, caption, title } = props;
 
   const [distance, setDistance] = useState(0);
   const [loaded, setLoaded] = useState(false);
@@ -56,7 +43,7 @@ function ReactIntense(props: Props) {
     y: window.innerHeight / 2,
   });
   const [transform, setTransform] = useState('');
-  const [visible, setVisible] = useState(false);
+  const [triggered, setTriggered] = useState(false);
   const intervalKey = useRef<number | undefined>();
 
   function positionTarget() {
@@ -148,7 +135,7 @@ function ReactIntense(props: Props) {
   }
 
   // Events
-  function _onClick(e: React.MouseEvent<HTMLDivElement>) {
+  function _onClick(e: React.MouseEvent<HTMLElement>) {
     e.preventDefault();
 
     if (onClick) {
@@ -160,7 +147,7 @@ function ReactIntense(props: Props) {
       y: e.clientY,
     };
 
-    setVisible(true);
+    setTriggered(true);
     lockBody();
   }
 
@@ -193,14 +180,8 @@ function ReactIntense(props: Props) {
 
   // View helpers
   function hideViewer() {
-    setVisible(false);
+    setTriggered(false);
     stop();
-  }
-
-  function renderLoader() {
-    return visible ? (
-      <div className={`${loader} ri-loader`}></div>
-    ) : null;
   }
 
   function renderViewer() {
@@ -212,7 +193,7 @@ function ReactIntense(props: Props) {
       width: vertical ? window.innerWidth : '',
     };
 
-    return visible ? (
+    return triggered ? (
       <figure className="ri-container" style={{ opacity: loaded ? 1 : 0 }}>
         <img ref={imgRef} src={src} style={transformStyle} onLoad={_onLoad} />
         <figcaption className="ri-caption-container">
@@ -224,17 +205,51 @@ function ReactIntense(props: Props) {
   }
 
   const imgRef = useRef<HTMLImageElement>(null);
-  const TriggerElement = trigger || 'div';
+
+  return { renderViewer, maximize: _onClick, triggered, transform, loaded, onLoad: _onLoad, imgRef };
+}
+
+function ReactIntense(props: Props) {
+  const {
+    className,
+    renderLoader = () => <div className="ri-loader"></div>,
+    src,
+    thumbnailSrc,
+    vertical,
+    caption,
+    title,
+  } = props;
+  const { triggered, transform, loaded, onLoad, maximize, imgRef } = useIntenseMaximize(props);
+
+  function renderViewer() {
+    const transformStyle = {
+      height: vertical ? '' : window.innerHeight,
+      MozTransform: transform,
+      transform: transform,
+      WebkitTransform: transform,
+      width: vertical ? window.innerWidth : '',
+    };
+
+    return triggered ? (
+      <figure className="ri-container" style={{ opacity: loaded ? 1 : 0 }}>
+        <img ref={imgRef} src={src} style={transformStyle} onLoad={onLoad} />
+        <figcaption className="ri-caption-container">
+          <h1 className="ri-title">{title}</h1>
+          <h2 className="ri-caption">{caption}</h2>
+        </figcaption>
+      </figure>
+    ) : null;
+  }
 
   return (
     <div className="ri-wrapper">
-      <TriggerElement
-        className={`${className} ri-trigger ${visible ? ' ri-clicked' : ''}`}
-        onClick={(e) => _onClick(e)}
+      <div
+        className={`${className} ri-trigger ${triggered ? ' ri-clicked' : ''}`}
+        onClick={maximize}
         style={{ backgroundImage: `url(${thumbnailSrc || src})` }}
       >
-        {renderLoader()}
-      </TriggerElement>
+        {triggered ? renderLoader() : null}
+      </div>
       {renderViewer()}
     </div>
   );

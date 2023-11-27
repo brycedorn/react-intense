@@ -18,20 +18,37 @@ import ReactIntense from 'react-intense'
 <ReactIntense src='img.jpg' />
 ```
 
+Or for more flexibility, use the provided `useIntenseMaximize` hook:
+
+```javascript
+import { useIntenseMaximize } from 'react-intense'
+
+...
+
+const { maximize, renderViewer } = useIntenseMaximize(props);
+
+return (
+  <>
+    <button onClick={maximize}>Maximize!</button>
+    {renderViewer()}
+  </>
+);
+```
+
+
 ## Optional Props
 
-| Name      | Type           | Description                                                                                                                      |
-| --------- | -------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| title     | string         | Renders in corner in maximized view.                                                                                             |
-| caption   | string         | Renders below title in maximized view.                                                                                           |
-| trigger   | Component<any> | Option to override the thumbnail image as the trigger to maximize the image. Passed `onClick` as prop to trigger maximized view. |
-| vertical  | boolean        | Images lock to scrolling either horizontally (default) or vertically.                                                            |
-| moveSpeed | number         | How fast to scroll images when following mouse.                                                                                  |
-| loader    | string         | The class for the loading animation that shows when the image is being loaded for maximized view. Default is `'ri-loader'`.    |
+| Name | Type | Description |
+| --- | --- | --- |
+| `title`     | `string`          | Renders in corner in maximized view. |
+| `caption`   | `string`          | Renders below title in maximized view. |
+| `vertical`  | `boolean`         | Images lock to scrolling either horizontally (default) or vertically. |
+| `moveSpeed` | `number`          | How fast to scroll images when following mouse. |
+| `loader`    | `React.ReactNode` | The loading spinner to use. |
 
 ## Styling
 
-Feel free to use and/or customize the provided styles in `lib/ReactIntense.css`.
+Feel free to use and/or customize the provided styles in `dist/ReactIntense.css`.
 
 ## Issues
 
